@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Mart Registration</title>
+    
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #e8f5e9 100%); /* Soft Mint/Blue Gradient */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Card Container */
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #2ecc71; /* Fresh Green Accent */
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #2e7d32;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        header p {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Form Group Styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* Input Fields Styling */
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        /* Input Focus State */
+        input:focus, textarea:focus {
+            border-color: #2ecc71;
+            box-shadow: 0 0 8px rgba(46, 204, 113, 0.2);
+        }
+
+        /* VISUAL VALIDATION LOGIC (CSS) */
+        /* If input is valid and user has typed, show green border */
+        input:not(:placeholder-shown):valid {
+            border-color: #2ecc71;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232ecc71' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+
+        /* If input is invalid and user has typed, show red border */
+        input:not(:placeholder-shown):invalid {
+            border-color: #e74c3c;
+        }
+
+        textarea {
+            resize: vertical; /* Allow vertical resizing only */
+        }
+
+        /* Button Styling */
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn-reset {
+            background: none;
+            border: none;
+            color: #7f8c8d;
+            font-size: 12px;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 15px;
+            display: block;
+            width: 100%;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🥦 Fresh Mart</h1>
+            <p>Create your account to start shopping.</p>
+        </header>
+
+        <form action="#" method="POST">
+            
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" 
+                       id="fname" 
+                       name="firstname" 
+                       minlength="6" 
+                       pattern="[A-Za-z]+" 
+                       placeholder="e.g. Jonathan" 
+                       title="Must contain only alphabets and be at least 6 characters long."
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" 
+                       id="lname" 
+                       name="lastname" 
+                       placeholder="e.g. Smith" 
+                       title="Last Name cannot be empty."
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" 
+                       id="email" 
+                       name="email" 
+                       pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                       placeholder="name@domain.com" 
+                       title="Please enter a valid email format."
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" 
+                       id="mobile" 
+                       name="mobile" 
+                       pattern="[0-9]{10}" 
+                       placeholder="1234567890" 
+                       title="Must be exactly 10 digits (0-9)."
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input type="password" 
+                       id="pwd" 
+                       name="password" 
+                       minlength="6" 
+                       placeholder="******" 
+                       title="Password must be at least 6 characters."
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Delivery Address</label>
+                <textarea id="address" 
+                          name="address" 
+                          rows="3" 
+                          placeholder="House No, Street, City..." 
+                          required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Register Now</button>
+            
+            <button type="reset" class="btn-reset">Clear all fields</button>
+
+        </form>
+
+        <footer>
+            &copy; 2024 Fresh Mart Online Grocery.
+        </footer>
+    </div>
+
+</body>
+</html>
