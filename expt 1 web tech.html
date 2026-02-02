@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Mart | Online Grocery Project</title>
+    
+    <style>
+       
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+ {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f9f4; /* Light Mint Background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2ecc71, #27ae60); /* Green Gradient */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+  
+        nav {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky; /* Sticks to top on scroll */
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #2ecc71;
+            color: white;
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+        }
+
+    
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+       
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Soft Shadow */
+            text-align: center;
+            border-bottom: 3px solid #2ecc71; /* Green accent line */
+        }
+
+        h2 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        .map-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        img {
+            border-radius: 8px;
+            border: 4px solid #eee;
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        img:hover {
+            border-color: #2ecc71;
+        }
+
+        .product-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .product-list li {
+            background-color: #e8f5e9;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #2e7d32;
+            font-weight: 600;
+            border: 1px solid #c8e6c9;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2980b9;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        
+        iframe {
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 700px;
+            height: 350px;
+            background-color: #eee;
+        }
+
+     
+        footer {
+            background-color: #2c3e50; /* Dark Blue/Gray */
+            color: #ecf0f1;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Project: Online Grocery Store</h1>
+        <p>Your Daily Source for Fresh & Organic Food</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#interactive-map">Interactive Aisle</a></li>
+            <li><a href="#vegetables">Vegetables</a></li>
+            <li><a href="#fruits">Fruits</a></li>
+            <li><a href="#store-frame">Locations</a></li>
+            <li><a href="https://www.google.com" target="_blank">External Search</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="interactive-map">
+            <h2>Shop by Image</h2>
+            <p>Click on the <strong>Left Side</strong> for Veggies or the <strong>Right Side</strong> for Fruits.</p>
+            
+            <div class="map-wrapper">
+                <img src="https://images.pexels.com/photos/95425/pexels-photo-95425.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     alt="Grocery Aisle" 
+                     width="600" 
+                     height="400" 
+                     usemap="#shopmap">
+            </div>
+
+            <map name="shopmap">
+                <area shape="rect" coords="0,0,300,400" href="#vegetables" alt="Go to Vegetables">
+                
+                <area shape="rect" coords="301,0,600,400" href="#fruits" alt="Go to Fruits">
+            </map>
+        </section>
+
+        <section id="vegetables">
+            <h2>🥦 Vegetables Aisle</h2>
+            <p>Farm fresh organic greens picked daily.</p>
+            <ul class="product-list">
+                <li>Organic Carrots</li>
+                <li>Fresh Spinach</li>
+                <li>Red Potatoes</li>
+                <li>Broccoli Heads</li>
+            </ul>
+            <a href="#interactive-map" class="back-link">↑ Back to Interactive Map</a>
+        </section>
+
+        <section id="fruits">
+            <h2>🍎 Fruits Aisle</h2>
+            <p>Sweet, juicy, and seasonal fruits.</p>
+            <ul class="product-list">
+                <li>Red Apples</li>
+                <li>Ripe Bananas</li>
+                <li>Valencia Oranges</li>
+                <li>Fresh Strawberries</li>
+            </ul>
+            <a href="#interactive-map" class="back-link">↑ Back to Interactive Map</a>
+        </section>
+
+        <section id="store-frame">
+            <h2>Find Our Store</h2>
+            <p>View our delivery locations on the map below.</p>
+            
+            <iframe 
+                src="https://www.openstreetmap.org/export/embed.html" 
+                title="Store Map Location">
+            </iframe>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Grocery Store Project. All Rights Reserved.</p>
+        <p>Designed for Web Technologies Assignment.</p>
+    </footer>
+
+</body>
+</html>

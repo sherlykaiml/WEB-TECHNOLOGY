@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery Store Project</title>
+</head>
+<body>
+
+    <header>
+        <center>
+            <h1>Project: Online Grocery Store Website</h1>
+            <p>Welcome to your local fresh food market.</p>
+        </center>
+    </header>
+
+    <hr>
+
+    <nav>
+        <h3>Menu:</h3>
+        <ul>
+            <li><a href="#interactive-map">Shop via Image Map</a></li>
+            <li><a href="#store-frame">View Store Locations (Frame)</a></li>
+            <li><a href="https://www.google.com/search?q=grocery+delivery" target="_blank">External Delivery Partner</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <section>
+        <a name="interactive-map"></a>
+        <h2>Interactive Shopping Map</h2>
+        <p>Click on the <strong>Vegetables</strong> (Left side) or the <strong>Fruits</strong> (Right side) in the image below:</p>
+
+        <img src="https://images.pexels.com/photos/95425/pexels-photo-95425.jpeg?auto=compress&cs=tinysrgb&w=600" 
+             alt="Grocery Aisle" 
+             width="600" 
+             height="400" 
+             usemap="#shopmap">
+
+        <map name="shopmap">
+            <area shape="rect" coords="0,0,300,400" href="#vegetables" alt="Vegetables Section">
+            
+            <area shape="rect" coords="301,0,600,400" href="#fruits" alt="Fruits Section">
+        </map>
+    </section>
+
+    <br>
+
+    <section>
+        <a name="vegetables"></a>
+        <h3>🥦 Vegetables Section</h3>
+        <ul>
+            <li>Carrots</li>
+            <li>Spinach</li>
+            <li>Potatoes</li>
+        </ul>
+        <a href="#interactive-map">Back to Map</a>
+    </section>
+
+    <section>
+        <a name="fruits"></a>
+        <h3>🍎 Fruits Section</h3>
+        <ul>
+            <li>Apples</li>
+            <li>Oranges</li>
+            <li>Bananas</li>
+        </ul>
+        <a href="#interactive-map">Back to Map</a>
+    </section>
+
+    <hr>
+
+    <section>
+        <a name="store-frame"></a>
+        <h2>Store Locations Map (Embedded Frame)</h2>
+        <p>Below is a map embedded directly into this page:</p>
+
+        <iframe 
+            src="https://www.openstreetmap.org/export/embed.html" 
+            width="600" 
+            height="300"
+            title="Map Frame">
+        </iframe>
+    </section>
+
+    <br><br>
+    <hr>
+
+    <footer>
+        <center>
+            <p><strong>&copy; 2024 Online Grocery Store Project. All Rights Reserved.</strong></p>
+            <p>Developed by Student Name</p>
+        </center>
+    </footer>
+
+</body>
+</html>
